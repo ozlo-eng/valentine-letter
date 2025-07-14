@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Valentine Letter 💌</title>
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <div class="hearts"></div>
+
+  <!-- Background music -->
+  <audio autoplay loop>
+    <source src="love-song.mp3" type="audio/mpeg" />
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Love Letter -->
+  <div class="letter-container">
+    <h1>To My Love ❤️</h1>
+    <div class="typewriter" id="typewriterText">
+      <p>
+        From the moment we met, my world became brighter.<br><br>
+        Your smile, your laughter, your love—it's everything I need.<br><br>
+        No words can fully express how much you mean to me.<br><br>
+        I just want you to know: I love you with all my heart.<br><br>
+        Forever yours,<br>
+        <strong>— Your Valentine 💖</strong>
+      </p>
+    </div>
+    <button id="replayBtn">🔁 Replay</button>
+  </div>
+
+  <script>
+    const replayBtn = document.getElementById("replayBtn");
+    const typewriter = document.getElementById("typewriterText");
+
+    replayBtn.addEventListener("click", () => {
+      // Restart animation by removing and re-adding the class
+      typewriter.classList.remove("typewriter");
+      void typewriter.offsetWidth; // Trigger reflow
+      typewriter.classList.add("typewriter");
+    });
+  </script>
+</body>
+</html>
